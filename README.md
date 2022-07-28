@@ -5,20 +5,33 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+<h3> GET http://localhost:3000/users </h3>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+[
+{
+"id": 1,
+"name": "Deepak Kumar",
+"email": "and.dev.deepak@gmail.com",
+"created_at": "2022-07-28T08:40:24.491Z",
+"updated_at": "2022-07-28T08:40:24.491Z",
+"posts": [
+{
+"id": 1,
+"content": "Marvel Studios returned to Hall H at San Diego Comic-Con 2022 and packed a punch with a robust rollout of series and films coming soon to the Marvel Cinematic Universe! Marvel Studios President Kevin Feige (who was wearing a Miss Minutes hat) lead those in the room through a walkthrough of what’s coming next for the MCU — Phase 5 and beyond — and delighted the audience with surprises around every corner of the ever-expanding universe. ",
+"user_id": 1,
+"created_at": "2022-07-28T08:43:36.033Z",
+"updated_at": "2022-07-28T08:43:36.033Z"
+}
+]
+},
+{
+"id": 2,
+"name": "Priyanka Sharma",
+"email": "priyanka.sudan.sharma@gmail.com",
+"created_at": "2022-07-28T08:41:04.644Z",
+"updated_at": "2022-07-28T08:41:04.644Z",
+"posts": []
+}
+]
+```
