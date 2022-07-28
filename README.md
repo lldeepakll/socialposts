@@ -37,6 +37,7 @@ Things you may want to cover:
 ```
 
 <h3> GET http://localhost:3000/posts </h3>
+
 ```
 [
 {
