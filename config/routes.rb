@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :pets
+  resources :addresses
+  resources :people
   resources :comments
   resources :posts
   resources :users

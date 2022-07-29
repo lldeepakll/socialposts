@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_28_083327) do
+ActiveRecord::Schema.define(version: 2022_07_29_111910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "street"
+    t.string "number"
+    t.bigint "person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["person_id"], name: "index_addresses_on_person_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "message"
@@ -23,6 +32,21 @@ ActiveRecord::Schema.define(version: 2022_07_28_083327) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.bigint "person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["person_id"], name: "index_pets_on_person_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -40,7 +64,9 @@ ActiveRecord::Schema.define(version: 2022_07_28_083327) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "addresses", "people"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "pets", "people"
   add_foreign_key "posts", "users"
 end
